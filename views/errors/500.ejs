@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') %>
+  <title>500 - Play Traditional Game</title>
+  <style>
+    :root {
+      --orange-color: #f9b23e;
+      --orange-dark: #c78e32;
+      --orange-light: #ffca2c;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    a,
+    p {
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .display-1,
+    .h1,
+    .h2,
+    .h3,
+    .h4 {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .h1 {
+      letter-spacing: 0.2rem;
+    }
+
+    .text-orange {
+      color: var(--orange-color);
+    }
+
+    .bg::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("images/top-score-bg.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    #content .internalerror {
+      margin-top: 45%;
+      margin-bottom: 45%;
+    }
+  </style>
+</head>
+
+<body>
+  <main id="main" class="bg">
+    <div id="content" class="container d-flex flex-column align-items-center">
+      <div class="row">
+        <div class="col internalerror text-center">
+          <p class="display-1 text-orange">500</p>
+          <p class="h1 text-orange text-uppercase">internal server error</p>
+          <p class="text-white">There is a problem with the resource you are looking for, and it cannot be displayed</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('../partials/script') %>
+</body>
+
+</html>
