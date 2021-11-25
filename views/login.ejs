@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="stylesheets/login.css">
+  <title>Login - Play Traditional Game</title>
+</head>
+
+<body>
+  <main id="main" class="bg">
+    <%- include('partials/navbar') %>
+    <div id="content" class="container d-flex flex-column justify-content-center text-center">
+      <div class="row">
+        <div class="col">
+          <form id="form" class="mx-auto mt-5" action="/login" method="post">
+            <p class="h5 text-orange mb-5">Please log in using your account</p>
+            <div class="mb-4">
+              <label for="username" class="form-label text-white">Username</label>
+              <input type="text" class="form-control text-orange text-center border-0 bg-dark" id="username"
+                name="username" placeholder="Enter your username" aria-describedby="username" tabindex="1" required>
+            </div>
+            <div class="mb-2">
+              <label for="password" class="form-label text-white">Password</label>
+              <input type="password" class="form-control text-center border-0 bg-dark" id="password" name="password"
+                placeholder="Enter your password" tabindex="2" required>
+            </div>
+            <div class="form-check text-orange text-start">
+              <input class="form-check-input border-1 border-orange" type="checkbox" value="" id="keep" tabindex="3">
+              <label class="form-check-label small mb-2" for="keep">
+                Keep me logged in
+              </label>
+            </div>
+            <button type="submit" class="btn btn-warning fw-bold text-uppercase" tabindex="4">log in</button><br>
+            <a class="text-orange small text-decoration-none" href="/register" tabindex="5">Don't have account yet?
+              Create one
+            </a>
+            <div class="text-center text-danger">
+              <label for="username" class="small"><%= msg %></label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include('partials/footer') %>
+  </main>
+
+  <%- include('partials/script') %>
+</body>
+
+</html>

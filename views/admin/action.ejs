@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') %>
+  <style>
+    :root {
+      --orange-color: #f9b23e;
+      --orange-dark: #c78e32;
+      --orange-light: #ffca2c;
+    }
+
+    html,
+    body {
+      min-width: 290px;
+      font-family: 'Open Sans', Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    #navbar {
+      position: fixed;
+      min-width: 290px;
+      top: 0px;
+      left: 0px;
+      width: 300px;
+      height: 100%;
+      border-right: solid;
+      border-color: var(--orange-color);
+    }
+
+    header {
+      color: var(--orange-color);
+      margin: 10px;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: thin;
+    }
+
+    #main-doc header {
+      text-align: left;
+      margin: 0px;
+      font-weight: bold;
+    }
+
+    #navbar ul {
+      height: 88%;
+      padding: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    #navbar li {
+      border-top: 1px solid var(--orange-color);
+      list-style: none;
+      position: relative;
+      width: 100%;
+    }
+
+    #navbar a {
+      display: block;
+      padding: 10px 30px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    #navbar a:hover {
+      background-color: var(--orange-color);
+      color: #ffffff;
+    }
+
+    #navbar #logout:hover {
+      background-color: #dc3545;
+    }
+
+    #main-doc {
+      position: absolute;
+      margin-left: 310px;
+      padding: 20px;
+      margin-bottom: 110px;
+    }
+
+    section {
+      min-height: 1000px;
+    }
+
+    section article {
+      color: #ffffff;
+      margin: 15px;
+      font-size: 0.96em;
+    }
+
+    form {
+      min-width: 300px;
+    }
+
+    form .form-control:focus {
+      box-shadow: 0 0 10px var(--orange-color), 0 0 40px var(--orange-color, 0 0 60px var(--orange-color));
+    }
+
+    form .btn-warning {
+      background-color: var(--orange-color);
+    }
+
+    form .btn-warning:focus,
+    form .btn-warning:hover {
+      box-shadow: 0 0 10px var(--orange-light), 0 0 40px var(--orange-light, 0 0 80px var(--orange-light));
+    }
+
+    @media (max-width: 1024px) {
+    #main-doc {
+        position: relative;
+        margin-left: 910px;
+    }
+}
+
+@media only screen and (max-width: 815px) {
+    #navbar ul {
+        border: 1px solid var(--orange-color);
+        height: auto;
+    }
+
+    #navbar {
+        background-color: rgb(33,37,41);
+        position: absolute;
+        width: 100%;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-height: 275px;
+        border: none;
+        z-index: 1;
+        border-bottom: 2px solid;
+    }
+
+    #main-doc {
+        position: relative;
+        margin-left: 250px;
+        margin-top: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    #main-doc {
+        position: relative;
+        margin-left: 350px;
+    }
+}
+
+@media (max-width: 400px) {    
+    #main-doc {
+        position: relative;
+        margin-left: 150px;
+        margin-top: 300px;
+    }
+}
+  </style>
+  <title>Dashboard</title>
+</head>
+
+<body class="bg-dark">
+  <nav id="navbar">
+    <header class="my-5">Dashboard</header>
+    <ul>
+      <li><a href="#user-game" id="user" class="nav-link text-white">user_game</a></li>
+      <li><a href="#user-game-biodata" id="biodata" class="nav-link text-white">user_game_biodata</a></li>
+      <li><a href="#user-game-history" id="history" class="nav-link text-white">user_game_history</a></li>
+      <li class="me-1"><a href="/admin/logout" id="logout" class="nav-link text-white">Logout</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="user-game">
+      <header>user_game</header>
+      <article>
+        <div class="container">
+          <div class="col w-25">
+            <% if(typeof user !== 'undefined') { %>
+            <form action="/admin/update" method="post" class="form mt-5">
+              <h1 class="mb-3">Edit User</h1>
+              <% } else { %>
+              <form action="/admin/create" method="post" class="form mt-5">
+                <h1 class="mb-3">Add User</h1>
+                <% } %>
+
+                <div class="form-group mb-3">
+                  <label class="mb-2" for="username">Username :</label>
+                  <input type="text" class="form-control border-0 bg-light" name="username" minlength="3"
+                    <% if(typeof user !== 'undefined') { %> value="<%= user.username %>" <% } %>>
+                </div>
+                <div class="form-group mb-3">
+                  <label class="mb-2" for="password">Password :</label>
+                  <input type="password" class="form-control border-0 bg-light" name="password" minlength="6"
+                    <% if(typeof user !== 'undefined') { %> value="<%= user.password %>" <% } %>>
+                </div>
+                <div class="form-group mb-3">
+                  <label class="mb-2" for="email">Email :</label>
+                  <input type="email" class="form-control border-0 bg-light" name="email" minlength="6"
+                    <% if(typeof user !== 'undefined') { %> value="<%= user.email %>" <% } %>>
+                </div>
+                <!-- <div class="form-group">
+                  <label for="approved">Subscribed</label>
+                  <select name="approved" id="approved" class="form-control">
+                    <option value="true"
+                      <% if(typeof user !== 'undefined' && user.subscribed === true) { selected="selected" } %>>
+                      Published</option>
+                    <option value="false"
+                      <% if(typeof user !== 'undefined' && user.subscribed === false) { selected="selected" } %>>Draft
+                    </option>
+                  </select>
+                </div> -->
+                <div class="form-group">
+                  <% if(typeof user !== 'undefined') { %>
+                  <input type="hidden" name="id" value="<%= user.id %>">
+                  <% } %>
+                </div>
+                <button class="btn btn-warning fw-bold text-uppercase mt-3" type="submit">submit</button>
+              </form>
+            </form>
+          </div>
+      </article>
+    </section>
+    <section class="main-section" id="user-game-biodata">
+      <header>user_game_biodata</header>
+      <article>
+        <p>
+          JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript
+          language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows
+          most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it
+          was renamed from LiveScript to JavaScript.
+        </p>
+        <p>
+          In contrast to Java's compile-time system of classes built by declarations, JavaScript supports a runtime
+          system based on a small number of data types representing numeric, Boolean, and string values. JavaScript has
+          a prototype-based object model instead of the more common class-based object model. The prototype-based model
+          provides dynamic inheritance; that is, what is inherited can vary for individual objects. JavaScript also
+          supports functions without any special declarative requirements. Functions can be properties of objects,
+          executing as loosely typed methods.
+        </p>
+        <p>
+          JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classes,
+          and methods. You do not have to be concerned with whether methods are public, private, or protected, and you
+          do not have to implement interfaces. Variables, parameters, and function return types are not explicitly
+          typed.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="user-game-history">
+      <header>user_game_history</header>
+      <article>
+        <p>The latest ECMAScript standard defines seven data types:</p>
+        <ul>
+          <li>Six data types that are primitives:
+            <ul>
+              <li>Boolean. true and false.</li>
+              <li>null. A special keyword denoting a null value. Because JavaScript is case-sensitive, null is not the
+                same as Null, NULL, or any other variant.</li>
+              <li>undefined. A top-level property whose value is undefined.</li>
+              <li>Number. 42 or 3.14159.</li>
+              <li>String. "Howdy"</li>
+              <li>Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.</li>
+            </ul>
+          </li>
+          <li>and Object</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <%- include('../partials/script') %>
+</body>
+
+</html>

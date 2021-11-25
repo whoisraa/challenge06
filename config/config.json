@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "whoisraa",
+    "database": "games",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "whoisraa",
+    "database": "games",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "whoisraa",
+    "database": "games",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

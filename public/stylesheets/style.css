@@ -1,0 +1,230 @@
+:root {
+  --orange-color: #f9b23e;
+  --orange-dark: #c78e32;
+  --orange-light: #ffca2c;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+nav .navbar-brand {
+  letter-spacing: 0.3rem;
+}
+
+nav .nav-link {
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+a,
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.display-2,
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.h1 {
+  letter-spacing: 0.2rem;
+}
+
+.text-orange {
+  color: var(--orange-color);
+  letter-spacing: 0.2rem;
+}
+
+.btn-warning {
+  width: 15rem;
+  padding: 1rem 1rem;
+  background-color: var(--orange-color);
+}
+
+.btn-warning:hover {
+  box-shadow: 0 0 10px var(--orange-light), 0 0 40px var(--orange-light, 0 0 80px var(--orange-light));
+}
+
+.bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: -1;
+}
+
+.img1 {
+  background-image: url("../images/main-bg.jpg");
+}
+
+.img2 {
+  background-image: url("../images/the-games-bg.jpg");
+}
+
+.img3 {
+  background-image: url("../images/features.jpg");
+}
+
+.img4 {
+  background-image: url("../images/requirements.png");
+}
+
+.img5 {
+  background-image: url("../images/top-score-bg.png");
+}
+
+.img6 {
+  background-image: url("../images/newsletter.png");
+}
+
+/* ---------- sections ---------- */
+
+/* main */
+
+#content-1 {
+  min-height: 100vh;
+}
+
+#content-1 .hero {
+  letter-spacing: 0.3rem;
+}
+
+#content-1 .subhero {
+  font-weight: 400;
+}
+
+#content-1 .story {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* about */
+
+#content-2 {
+  min-height: 100vh;
+  width: 150vh;
+}
+
+#content-2 .carousel {
+  height: 50vh;
+  width: 100vh;
+}
+
+#content-2 .carousel .carousel-indicators [data-bs-target] {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: none;
+  border: 1px solid #fff;
+}
+
+#content-2 .carousel .active {
+  background: #fff !important;
+}
+
+#content-2 .carousel .carousel-control-prev {
+  left: -10vh;
+}
+
+#content-2 .carousel .carousel-control-next {
+  right: -10vh;
+}
+
+/* features */
+
+#content-3 {
+  min-height: 100vh;
+  width: 150vh;
+}
+
+#content-3 .circle {
+  height: 0.8rem;
+  width: 0.8rem;
+  background: none;
+  border: 1.5px solid white;
+  border-radius: 50%;
+}
+
+#content-3 .circle-white {
+  background: white;
+}
+
+#content-3 .line {
+  left: 5px;
+  height: 6.8rem;
+  width: 2px;
+  background: white;
+}
+
+/* requirements */
+
+.mycomputer {
+  min-height: 30vh;
+}
+
+#content-4 {
+  min-height: 70vh;
+}
+
+#content-4 .table {
+  width: 38rem;
+}
+
+/* quotes */
+
+#content-5 {
+  min-height: 100vh;
+}
+
+#content-5 .card {
+  width: 380px;
+  background: #FFFFFF14;
+  border-radius: 10px;
+}
+
+#content-5 .card .card-img {
+  border-radius: 50%;
+  box-shadow: 8px 3px var(--orange-color);
+}
+
+/* subscribe */
+
+#content-6 {
+  min-height: 85vh;
+}
+
+#content-6 .email {
+  color: var(--orange-color);
+  width: 20rem !important;
+}
+
+#content-6 .email:focus {
+  box-shadow: 0 0 10px var(--orange-color), 0 0 40px var(--orange-color, 0 0 60px var(--orange-color));
+}
+
+#content-6 .email-label {
+  color: gray;
+}
+
+#content-6 .btn-subs {
+  margin-top: -1.25rem;
+}
+
+#content-footer {
+  min-height: 15vh;
+}
+
+#btn-back-to-top {
+  color: var(--orange-color);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}

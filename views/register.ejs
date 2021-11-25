@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="stylesheets/register.css">
+  <title>Sign up - Play Traditional Game</title>
+</head>
+
+<body>
+  <main id="main" class="bg">
+    <%- include('partials/navbar') %>
+    <div id="content" class="container d-flex flex-column justify-content-center">
+      <div class="row">
+        <div class="col">
+          <form id="form" class="text-center mx-auto mt-5" action="/register" method="post">
+            <p class="h5 text-orange mb-5">Create a new account</p>
+            <div class="mb-1">
+              <label for="username" class="form-label text-white">New username</label>
+              <input type="text" class="form-control text-orange text-center border-0 bg-dark" id="username"
+                name="username" placeholder="Enter a new username" aria-describedby="username" tabindex="1">
+              <div class="text-start text-secondary">
+                <label for="username" class="small"><span class="text-danger">*</span> Min length 3
+                  characters</label>
+              </div>
+              <div class="text-center text-danger">
+                <label for="username" class="small"><%= username %></label>
+              </div>
+            </div>
+            <div class="mb-1">
+              <label for="password" class="form-label text-white">New password</label>
+              <input type="password" class="form-control text-center border-0 bg-dark" id="password" name="password"
+                placeholder="Enter a new password" tabindex="2">
+              <div class="text-start text-secondary">
+                <label for="password" class="small"><span class="text-danger">*</span> Min length 6 characters</label>
+              </div>
+              <div class="text-center text-danger">
+                <label for="password" class="small"><%= password %></label>
+              </div>
+            </div>
+            <div class="mb-1">
+              <label for="email" class="form-label text-white">Your Email</label>
+              <input type="email" class="form-control text-center border-0 bg-dark" id="email" name="email"
+                placeholder="Enter your email" aria-describedby="email" tabindex="3">
+            </div>
+            <div class="text-center text-danger">
+              <label for="email" class="small mb-2"><%= email %></label>
+            </div>
+            <button type="submit" class="btn btn-warning fw-bold text-uppercase" tabindex="5">sign up</button>
+            <div class="text-center text-success mt-1">
+              <label for="submit" class="small fw-bold"><%= success %></label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include('partials/footer') %>
+  </main>
+
+  <%- include('partials/script') %>
+</body>
+
+</html>

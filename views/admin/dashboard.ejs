@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') %>
+  <link rel="stylesheet" href="stylesheets/admin/dashboard.css">
+  <title>Dashboard</title>
+</head>
+
+<body class="bg-dark">
+  <nav id="navbar">
+    <header class="my-5">Dashboard<br><br>Hello, <%= admin %>!</header>
+    <ul>
+      <li><a href="#user-game" id="user" class="nav-link text-white">user_game</a></li>
+      <li><a href="#user-game-biodata" id="biodata" class="nav-link text-white">user_game_biodata</a></li>
+      <li><a href="#user-game-history" id="history" class="nav-link text-white">user_game_history</a></li>
+      <li class="me-1"><a href="/admin/logout" id="logout" class="nav-link text-white">Logout</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section mb-5" id="user-game">
+      <header>user_game</header>
+      <article>
+        <a href="/admin/add" class="btn btn-success my-3">Add User</a>
+        <table class="table table-bordered table-hover table-dark text-center align-middle">
+          <thead>
+          <tr>
+              <th scope="col">No</th>
+              <th scope="col">Username</th>
+              <th scope="col">Password</th>
+              <th scope="col">Email</th>
+              <th scope="col">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+              <% let i = 1; %>
+              <% userList.forEach((user) => { %>
+                  <tr>
+                      <th scope="row"><%= i++ %></th>
+                      <td><%= user.username %></td>
+                      <td><%= user.password %></td>
+                      <td><%= user.email %></td>
+                      <td>
+                          <a class="btn btn-primary" href="/admin/edit/<%= user.id %>">Edit</a>
+                          <a class="btn btn-danger" href="/admin/delete/<%= user.id %>">Delete</a>
+                      </td>
+                  </tr>
+              <% }); %>
+          </tbody>
+      </table>
+      </article>
+    </section>
+    <section class="main-section mb-5" id="user-game-biodata">
+      <header>user_game_biodata</header>
+      <article>
+        <table class="table table-bordered table-hover table-dark text-center align-middle">
+          <thead>
+          <tr>
+              <th scope="col">No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Bio</th>
+              <th scope="col">Url</th>
+              <th scope="col">ID</th>
+          </tr>
+          </thead>
+          <tbody>
+              <% let j = 1; %>
+              <% biodataList.forEach((user) => { %>
+                  <tr>
+                      <th scope="row"><%= j++ %></th>
+                      <td><%= user.name %></td>
+                      <td><%= user.bio %></td>
+                      <td><%= user.url %></td>
+                      <td><%= user.user_id %></td>
+                  </tr>
+              <% }); %>
+          </tbody>
+      </table>
+      </article>
+    </section>
+    <section class="main-section" id="user-game-history">
+      <header>user_game_history</header>
+      <article>
+        <table class="table table-bordered table-hover table-dark text-center align-middle">
+          <thead>
+          <tr>
+              <th scope="col">No</th>
+              <th scope="col">Win</th>
+              <th scope="col">Date</th>
+              <th scope="col">ID</th>
+          </tr>
+          </thead>
+          <tbody>
+              <% let k = 1; %>
+              <% historyList.forEach((user) => { %>
+                  <tr>
+                      <th scope="row"><%= k++ %></th>
+                      <td><%= user.win %></td>
+                      <td><%= user.date %></td>
+                      <td><%= user.user_id %></td>
+                  </tr>
+              <% }); %>
+          </tbody>
+      </table>
+      </article>
+    </section>
+  </main>
+
+  <%- include('../partials/script') %>
+</body>
+
+</html>

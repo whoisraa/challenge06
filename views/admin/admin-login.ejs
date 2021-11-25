@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') %>
+  <link rel="stylesheet" href="stylesheets/admin/admin-login.css">
+  <title>Admin Portal</title>
+</head>
+
+<body class="bg-dark">
+  <nav id="navbar">
+    <header class="my-5">Admin<br>Portal</header>
+    <ul>
+      <li><a href="#login" id="user" class="nav-link text-white">Login</a></li>
+      <li><a href="/" id="index" class="nav-link text-white">Home</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc" class="end-50 mt-lg-5">
+    <section class="main-section" id="user-game">
+      <header>Login</header>
+      <article class="container">
+        <form id="form" class="mt-lg-5" action="/admin" method="post">
+          <div class="mb-3">
+            <!-- <label for="username" class="form-label text-white">Username :</label> -->
+            <input type="text" class="form-control text-center border-0 bg-light" id="username"
+              name="username" placeholder="Enter username" aria-describedby="username" tabindex="1" required>
+          </div>
+          <div class="mb-2">
+            <!-- <label for="password" class="form-label text-white">Password :</label> -->
+            <input type="password" class="form-control text-center border-0 bg-light mb-3" id="password" name="password"
+              placeholder="Enter password" tabindex="2" required>
+          </div>
+          <button type="submit" class="btn btn-warning fw-bold text-uppercase w-100" tabindex="3">submit</button><br>
+          <div class="text-center text-danger mt-3">
+            <label for="username" class="small"><%= msg %></label>
+          </div>
+        </form>
+      </article>
+    </section>
+    
+  </main>
+
+  <%- include('../partials/script') %>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+:root {
+    --orange-color: #f9b23e;
+    --orange-dark: #c78e32;
+    --orange-light: #ffca2c;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+nav .navbar-brand {
+    letter-spacing: 0.3rem;
+}
+
+nav .nav-link {
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+a,
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.display-2,
+.h1,
+.h2,
+.h3,
+.h4 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.h1 {
+    letter-spacing: 0.2rem;
+}
+
+.text-orange {
+    color: var(--orange-color);
+}
+
+.border-orange {
+    border-color: var(--orange-color);
+}
+
+.btn-warning {
+    width: 15rem;
+    padding: 1rem 1rem;
+    background-color: var(--orange-color);
+}
+
+.btn-warning:focus,
+.btn-warning:hover {
+    box-shadow: 0 0 10px var(--orange-light), 0 0 40px var(--orange-light, 0 0 80px var(--orange-light));
+}
+
+.bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/requirements.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+#content {
+    min-height: 85vh;
+}
+
+#form {
+    max-width: 500px;
+    background-color: rgba(0,0,0, 0.7);
+    border: 1px solid var(--orange-color);
+    padding: 25px 40px;
+}
+
+#form .form-control {
+    height: 50px;
+    color: var(--orange-color);
+}
+
+#form .form-control:focus,
+#form .form-check-input:focus,
+#form .form-check-input:checked {
+    box-shadow: 0 0 10px var(--orange-color), 0 0 40px var(--orange-color, 0 0 60px var(--orange-color));
+}
+
+#form .form-check-input {
+    background-color: rgb(33,37,41);
+    opacity: 1;
+}
+
+#form .form-check-input:checked {
+    background-color: var(--orange-color);
+}

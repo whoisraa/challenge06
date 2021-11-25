@@ -1,0 +1,286 @@
+:root {
+    --bg-color: #9c835f;
+    --btn-back: #724c21;
+    --orange-color: #f9b23e;
+    --orange-dark: #c78e32;
+    --btn-play-bg: #c4c4c4;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.h2 {
+    letter-spacing: 2px;
+}
+
+.btn-back {
+    margin-top: -2vh;
+}
+
+.btn-back-link {
+    color: var(--btn-back);
+}
+
+.btn-back-link:hover {
+    color: none;
+    animation-name: back;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.text-title {
+    color: var(--orange-color);
+}
+
+@keyframes back {
+    0% {
+        color: var(--btn-back);
+    }
+
+    50% {
+        color: var(--orange-dark);
+    }
+
+    100% {
+        color: var(--orange-color);
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    header {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .text-title {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 510px) {
+    header {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .text-title {
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+.btn-play {
+    height: 150px;
+    width: 150px;
+}
+
+.btn-play:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.player:hover,
+.player:focus {
+    height: 150px;
+    width: 150px;
+    border-radius: 15%;
+}
+
+.player:hover {
+    animation-name: play;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+
+.player:focus {
+    background-color: var(--btn-play-bg);
+}
+
+.p-img:hover {
+    animation-name: img-rotate;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes play {
+    100% {
+        background-color: var(--btn-play-bg);
+    }
+}
+
+@keyframes img-rotate {
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+#refresh {
+    margin-top: 15vh;
+}
+
+#refresh:focus {
+    box-shadow: none;
+    border: none;
+}
+
+#refresh:hover {
+    animation: refresh;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+#text-refresh {
+    font-size: 1.2rem;
+}
+
+@keyframes refresh {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.middle {
+    color: #ff4136;
+    font-weight: bolder;
+    font-size: 5rem;
+}
+
+.middle .result,
+.result-draw {
+    background-color: #4C9654;
+    width: 230px;
+    height: 140px;
+    border-radius: 15px;
+    font-size: 1.3rem !important;
+    transform: rotate(-30deg);
+    color: white !important;
+    letter-spacing: 2px;
+}
+
+.middle .result {
+    padding: 40px 40px;
+}
+
+.result-draw {
+    background-color: #035B0C;
+    padding: 53px 40px;
+}
+
+.disable-click {
+    pointer-events: none;
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .btn-play {
+        height: 80px;
+        width: 80px;
+    }
+
+    .player:hover,
+    .player:focus {
+        height: 80px;
+        width: 80px;
+    }
+
+    .batu,
+    .kertas,
+    .gunting {
+        width: 50px;
+    }
+
+    #refresh {
+        width: 30px;
+        margin-top: 12vh;
+    }
+
+    #text-refresh {
+        font-size: 0.8rem;
+    }
+
+    .middle {
+        font-size: 2.5rem;
+    }
+
+    .middle .result,
+    .result-draw {
+        margin-left: -10px;
+        padding: 10px 20px;
+        width: 100px;
+        height: 60px;
+        font-size: 0.8rem !important;
+    }
+
+    .result-draw {
+        padding: 20px 20px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+    .btn-play {
+        height: 100px;
+        width: 100px;
+    }
+
+    .player:hover,
+    .player:focus {
+        height: 100px;
+        width: 100px;
+    }
+
+    .batu,
+    .kertas,
+    .gunting {
+        width: 50px;
+    }
+
+    #refresh {
+        width: 30px;
+        margin-top: 12vh;
+    }
+
+    .middle {
+        font-size: 3rem;
+    }
+
+    .middle .result,
+    .result-draw {
+        margin-left: -20px;
+        padding: 18px 20px;
+        width: 140px;
+        height: 80px;
+        font-size: 1rem !important;
+    }
+
+    .result-draw {
+        padding: 28px 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .middle .result,
+    .result-draw {
+        margin-left: 40px;
+    }
+}

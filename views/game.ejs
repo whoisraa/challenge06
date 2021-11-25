@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylesheets/game.css">
+  <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+  <header class="my-md-3 d-flex align-items-center">
+    <button class="btn btn-back"><a class="btn-back-link display-2 fw-bold text-decoration-none"
+        href="/">&lt;</a></button>
+    <img class="logo" src="images/logo.png" alt="logo">
+    <p class="text-title h2 fw-bold text-uppercase">&nbsp; rock paper scissors</p>
+  </header>
+  <main class="container mx-auto">
+    <div class="row row-cols-3 text-center">
+      <div class="col my-md-2">
+        <p class="h2 fw-bold"><%= username %></p>
+      </div>
+      <div class="col my-md-2"></div>
+      <div class="col my-md-2">
+        <p class="h2 fw-bold text-uppercase">COM</p>
+      </div>
+      <div class="col my-md-3">
+        <button class="btn btn-play player" id="player-batu">
+          <img src="images/batu.png" alt="batu" width="100px" class="batu p-img" id="p_batu">
+        </button>
+      </div>
+      <div class="col my-md-3"></div>
+      <div class="col my-md-3">
+        <button class="btn btn-play pe-none com" id="com-batu">
+          <img src="images/batu.png" alt="batu" width="100px" class="batu" id="c_batu">
+        </button>
+      </div>
+      <div class="col my-md-3">
+        <button class="btn btn-play player" id="player-kertas">
+          <img src="images/kertas.png" alt="kertas" width="100px" class="kertas p-img" id="p_kertas">
+        </button>
+      </div>
+      <div class="col middle text-center my-md-3">
+        <div class="area-middle">
+          <p class="text-middle text-uppercase">vs</p>
+        </div>
+      </div>
+      <div class="col my-md-3">
+        <button class="btn btn-play pe-none com" id="com-kertas">
+          <img src="images/kertas.png" alt="kertas" width="100px" class="kertas" id="c_kertas">
+        </button>
+      </div>
+      <div class="col my-md-3">
+        <button class="btn btn-play player" id="player-gunting">
+          <img src="images/gunting.png" alt="gunting" width="100px" class="gunting p-img" id="p_gunting">
+        </button>
+      </div>
+      <div class="col area-refresh my-md-3">
+        <button class="btn">
+          <img src="images/refresh.png" alt="refresh" width="60px" id="refresh">
+        </button>
+        <p id="text-refresh"></p>
+      </div>
+      <div class="col my-md-3">
+        <button class="btn btn-play pe-none com" id="com-gunting">
+          <img src="images/gunting.png" alt="gunting" width="100px" class="gunting" id="c_gunting">
+        </button>
+      </div>
+    </div>
+  </main>
+  <%- include('partials/script') %>
+  <script src="javascripts/game.js"></script>
+</body>
+
+</html>

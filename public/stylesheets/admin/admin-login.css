@@ -1,0 +1,146 @@
+:root {
+    --orange-color: #f9b23e;
+    --orange-dark: #c78e32;
+    --orange-light: #ffca2c;
+}
+
+html,
+body {
+    min-width: 290px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.5;
+}
+
+#navbar {
+    position: fixed;
+    min-width: 290px;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    border-right: solid;
+    border-color: var(--orange-color);
+}
+
+header {
+    color: var(--orange-color);
+    margin: 10px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: thin;
+}
+
+#main-doc header {
+    text-align: left;
+    margin: 0px;
+    font-weight: bold;
+}
+
+#navbar ul {
+    height: 100%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#navbar li {
+    border-top: 1px solid var(--orange-color);
+    list-style: none;
+    position: relative;
+    width: 100%;
+}
+
+#navbar a {
+    display: block;
+    padding: 10px 30px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#navbar a:hover {
+    background-color: var(--orange-color);
+    color: #ffffff;
+}
+
+#navbar #index:hover {
+    background-color: #dc3545;
+}
+
+#main-doc {
+    position: absolute;
+    margin-left: 310px;
+    padding: 20px;
+    margin-bottom: 110px;
+}
+
+section article {
+    color: #ffffff;
+    margin: 15px;
+    font-size: 0.96em;
+}
+
+form {
+    min-width: 300px;
+}
+
+form .form-control:focus {
+    box-shadow: 0 0 10px var(--orange-color), 0 0 40px var(--orange-color, 0 0 60px var(--orange-color));
+}
+
+form .btn-warning {
+    background-color: var(--orange-color);
+}
+
+form .btn-warning:focus,
+form .btn-warning:hover {
+    box-shadow: 0 0 10px var(--orange-light), 0 0 40px var(--orange-light, 0 0 80px var(--orange-light));
+}
+
+@media (max-width: 1024px) {
+    #main-doc {
+        position: relative;
+        margin-left: 910px;
+    }
+}
+
+@media only screen and (max-width: 815px) {
+    #navbar ul {
+        border: 1px solid var(--orange-color);
+        height: auto;
+    }
+
+    #navbar {
+        background-color: rgb(33,37,41);
+        position: absolute;
+        width: 100%;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-height: 275px;
+        border: none;
+        z-index: 1;
+        border-bottom: 2px solid;
+    }
+
+    #main-doc {
+        position: relative;
+        margin-left: 250px;
+        margin-top: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    #main-doc {
+        position: relative;
+        margin-left: 350px;
+    }
+}
+
+@media (max-width: 400px) {    
+    #main-doc {
+        position: relative;
+        margin-left: 150px;
+        margin-top: 300px;
+    }
+}
