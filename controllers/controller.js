@@ -42,7 +42,8 @@ module.exports = {
         try {
             const user = await user_game_biodata.findAll();
             res.status(200).render('edit', {
-                user: user
+                userlogin: user_game.username,
+                userList: user
             })
         } catch (error) {
             console.error(error);

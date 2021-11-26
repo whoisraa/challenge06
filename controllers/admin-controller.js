@@ -106,6 +106,14 @@ module.exports = {
                 password: CryptoJS.AES.encrypt(req.body.password, process.env.PASS).toString(),
                 email: req.body.email
             });
+
+            await user_game_biodata.create({
+                name: 'no name',
+                bio: 'description',
+                url: 'web url',
+                user_id: user_game.id
+            });
+
             res.status(302).redirect('/admin');
         } catch (error) {
             console.error(error);
