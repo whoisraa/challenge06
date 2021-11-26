@@ -62,7 +62,6 @@ npm start
 16. You will also see the tables of the database on the dashboard page
 17. On **user_game** section, try to add, edit, and delete the users
 * **Note**: after you add, edit, or delete the user, you will be redirected to **Admin Portal** page (you need to log in again to see the changes)
-18. Refresh and check **PostgreSQL** database again whether it successfully made a change or not yet
 
 ## 📦 Packages used 
 
