@@ -60,7 +60,7 @@ sequelize db:seed:all
 * **Note**: you will be provided a dashboard page immediately after you log in
 16. You will also see the tables of the database here
 17. On **user_game** section, try to add, edit, and delete the users
-* **Note**: after you add, edit, or delete the user, you will be redirected to **Admin Portal** page
+* **Note**: after you add, edit, or delete the user, you will be redirected to **Admin Portal** page (you need to log in again to see the changes)
 
 ## 📦 Packages used 
 
