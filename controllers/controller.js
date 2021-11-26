@@ -26,11 +26,24 @@ module.exports = {
 
     profile: async (req, res) => {
         try {
-            const biodata = await user_game_biodata.findByPk(req.params.id);
             res.status(200).render('profile', {
                 userlogin: user_game.username,
-                biodata: biodata
+                name: user_game_biodata.name,
+                bio: user_game_biodata.bio,
+                url: user_game_biodata.url
             });
+        } catch (error) {
+            console.error(error);
+            res.status(500).render('errors/500');
+        }
+    },
+
+    edit: async (req, res) => {
+        try {
+            const user = await user_game_biodata.findAll();
+            res.status(200).render('edit', {
+                user: user
+            })
         } catch (error) {
             console.error(error);
             res.status(500).render('errors/500');
@@ -49,7 +62,7 @@ module.exports = {
                     id: req.body.id
                 }
             });
-            res.status(302).redirect('/profile/:id');
+            res.status(302).redirect('/profile');
         } catch (error) {
             console.error(error) 
             res.status(500).render('errors/500');

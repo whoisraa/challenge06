@@ -13,28 +13,22 @@
     <div id="content" class="container d-flex flex-column justify-content-center text-center">
       <div class="row">
         <div class="col">
-          <form id="form" class="mx-auto mt-5" action="/update" method="post">
+          <div id="data" class="mx-auto mt-5">
             <p class="h3 text-orange mb-5"><%= userlogin %>'s profile</p>
             <div class="mb-3">
-              <p class="h5 text-white">Name : <%= user.name %></p>
-              <!-- <label for="name" class="form-label text-white">Name :</label>
-              <input type="text" class="form-control text-center border-0 bg-light" id="name" name="name"
-                aria-describedby="name" tabindex="1" value="<%= name %>"> -->
+              <p class="h5 text-white">Name : <p>
+              <p class="text-white"><%= name %></p>
             </div>
             <div class="mb-3">
-              <p class="h5 text-white">Bio : <%= user.bio %></p>
-              <!-- <label for="bio" class="form-label text-white">Bio :</label>
-              <textarea type="text" class="form-control text-center border-0 bg-light" id="bio" name="bio"
-                tabindex="2"><%= bio %></textarea> -->
+              <p class="h5 text-white">Bio : </p>
+              <p class="text-white"><%= bio %></p>
             </div>
             <div class="mb-4">
-              <p class="h5 text-white">Website : <%= user.url %></p>
-              <!-- <label for="url" class="form-label text-white">Website :</label>
-              <input type="url" class="form-control text-center border-0 bg-light" id="url" name="url"
-                aria-describedby="url" tabindex="3" value="<%= url %>"> -->
+              <p class="h5 text-white">Website : <p>
+              <p class="text-white"><%= url %></p>
             </div>
-            <button type="submit" class="btn btn-warning fw-bold text-uppercase w-25" tabindex="4">Edit</button>
-          </form>
+            <a class="btn btn-warning fw-bold text-uppercase w-25" href="/profile/edit">Edit</a>
+          </div>
         </div>
       </div>
     </div>

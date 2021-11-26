@@ -74,33 +74,14 @@ p {
     min-height: 85vh;
 }
 
-#form {
+#data {
     max-width: 500px;
     background-color: rgba(0,0,0, 0.8);
     border: 1px solid var(--orange-color);
     padding: 40px 40px;
 }
 
-#form .form-control {
-    height: 50px;
-}
-
-#form .form-control:focus,
-#form .form-check-input:focus,
-#form .form-check-input:checked {
-    box-shadow: 0 0 10px var(--orange-color), 0 0 40px var(--orange-color, 0 0 60px var(--orange-color));
-}
-
-#form .form-check-input {
-    background-color: rgb(33,37,41);
-    opacity: 1;
-}
-
-#form .form-check-input:checked {
-    background-color: var(--orange-color);
-}
-
-#form a:hover {
+#data a:hover {
     color: var(--orange-dark);
-    text-decoration: underline !important;
+    text-decoration: none !important;
 }
