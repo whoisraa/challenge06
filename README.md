@@ -9,8 +9,6 @@
 
 ## 🚀 Follow these steps to run the app
 
-### Interact as a user
-
 1. Clone the repository 
 ```bash
 git clone https://github.com/whoisraa/challenge06.git
@@ -28,39 +26,43 @@ ren .env.example .env
 ```bash
 npm install 
 ```
-5. Run this command to enable the **server**
-```bash
-npm start
-```
-6. Open this URL on your browser : `http://localhost:4000`
-7. Try to sign up at `http://localhost:4000/register`
-* **Note**: if you tried to sign up using existing account, an error message would be shown up
-8. Try to log in at `http://localhost:4000/login`
-* **Note**: you will be redirected to **homepage**. Here you can also click to enter the profile page or even to sign out
-9. Try to play the game with or without logging in first. Then see the differences
-
-### Interact as an administrator
-
-10. Run this command to create the database based on **config/config.json**
+5. Check the database configuration on **config/config.json**, and then run this command
 ```bash
 sequelize db:create
 ```
-11. Run this command to migrate the tables based on **models** and **migrations**
+6. Run this command to migrate the tables based on **models** and **migrations** directory files
 ```bash
 sequelize db:migrate
 ```
-12. Run this command to seed all the tables based on **seeders**
+7. Run this command to seed all the tables based on **seeders** directory files
 ```bash
 sequelize db:seed:all
 ```
-13. Refresh and check **PostgreSQL** database if it successfully made a change
+8. Refresh and check **PostgreSQL** database if it successfully made a change
+9. Run this command to enable the **server**
+```bash
+npm start
+```
+
+### Interact as a user
+
+10. Open this URL on your browser : `http://localhost:4000`
+11. Try to sign up at `http://localhost:4000/register`
+* **Note**: if you tried to sign up using existing account, an error message would be shown up
+12. Try to log in at `http://localhost:4000/login`
+* **Note**: you will be redirected to **homepage**. Here you can also click to enter the profile page or even to log out
+13. Try to play the game with or without logging in first. Then see the difference
+
+### Interact as an administrator
+
 14. Try to open admin page : `http://localhost:4000/admin`
 * **Note**: you will see an **Admin Portal** page
 15. Try to login by using provided credentials based on **config/admin.json**
 * **Note**: you will be provided a dashboard page immediately after you log in
-16. You will also see the tables of the database here
+16. You will also see the tables of the database on the dashboard page
 17. On **user_game** section, try to add, edit, and delete the users
 * **Note**: after you add, edit, or delete the user, you will be redirected to **Admin Portal** page (you need to log in again to see the changes)
+18. Refresh and check **PostgreSQL** database again whether it successfully made a change or not yet
 
 ## 📦 Packages used 
 
